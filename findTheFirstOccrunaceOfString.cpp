@@ -23,19 +23,19 @@
     int strStr1(string haystack, string needle) {
     
     if (needle.length() == 0) return 0;
-
-    for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+    int n=haystack.length(),m=needle.length(); 
+    for (int i = 0; i <= n - m; i++) {
         
         int j = 0;
         
         // check substring starting from i
-        while (j < needle.length() && 
+        while (j < m && 
                haystack[i + j] == needle[j]) {
             j++;
         }
         
         // if full match found
-        if (j == needle.length()) {
+        if (j == m) {
             return i;
         }
     }
@@ -45,6 +45,19 @@
 int main()
 {
     string first="sadooooo",second="sad";
-    cout<<strStr1(first,second);
+    //cout<<strStr1(first,second);
 
+    int dividend=12,divisor=2;
+    if(divisor<2) return dividend;
+    while(divisor>=2)
+    {
+        dividend>>1;
+        divisor>>1;
+    }
+    cout<<"hi";
+    if(divisor&1==1)
+    {
+        cout<<(dividend/1);
+    }
+    else{cout<<dividend;}
 }
